@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap>
+	<typeAlias alias="insa" type="common.DBbean"/>
+	
+	<insert  id="add">
+		insert into insa values(#sabun#, #name#, sysdate, #pay#)
+	</insert>
+
+	<select id="selectAll"  resultClass="insa">
+		select  * from insa order by sabun 
+	</select>		
+	
+	<select id="detail" resultClass="common.DBbean">
+		select  * from insa where sabun=#value#
+	</select>
+	
+	<delete id="delete">
+		delete from insa where sabun=#value#
+	</delete>
+	
+	<update id="edit">
+		update  insa  set  name=#name#, nalja=sysdate, pay=#pay# where sabun=#sabun# 
+	</update>	
+	
+</sqlMap>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

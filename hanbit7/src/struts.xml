@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    
+ <struts>
+  	<constant name="struts.i18n.encoding" value="UTF-8" />
+ 	<constant name="struts.multipart.maxSize" value="104857600" />
+ 	
+  	<package name="Web0429"     extends="struts-default">
+  		
+  		<action name="two">
+			<result>/two.jsp</result>
+		</action>
+  	
+ 		<action name="add"  class="net.hb.day29.InsertAction">
+ 			<result  type="chain">list</result>
+ 		</action>
+ 		
+ 		<action name="list"  class="net.hb.day29.ListAction">
+ 			<result  name="success">/twoList.jsp</result>
+ 		</action>
+ 		
+ 		<action name="detail"  class="net.hb.day29.DetailAction">
+ 			<result  name="success">/twoDetail.jsp</result>
+ 		</action>
+ 		
+ 	 	<action name="editPre"  class="net.hb.day29.EditPreAction">
+ 			<result  name="success">/twoEdit.jsp</result>
+ 		</action>
+ 		
+ 		<action name="edit"  class="net.hb.day29.EditAction">
+ 			<result  type="chain">list</result>
+ 		</action>
+ 		
+ 		<action name="delete"  class="net.hb.day29.DeleteAction">
+ 			<result  type="chain">list</result>
+ 		</action>
+ 		
+ 	</package>
+ </struts>
+ 
+ 
+ 
+ 
+ 
+ 
