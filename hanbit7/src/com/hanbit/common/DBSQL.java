@@ -1,34 +1,36 @@
-package common;
+package com.hanbit.common;
 
 import java.sql.*;
 import java.util.Date;
 import java.util.*;
 
-public class DBSQL {  //ÀÏ¹ÝÀÚ¹Ù = POJO  »ó¼ÓX
-	private  Connection CN; //DB¼­¹ö¿¬°á¹× id,pass ±â¾ï ,  ¸í·É¾î»ý¼º
-	private  Statement  ST; //Á¤ÀûÀÎ ÄÄÆÄÀÏ ¸í·É¾î
-	private  PreparedStatement PST; //¹Ì¸® ÄÄÆÄÀÏ µÈ ¸í·É¾î
-	private  ResultSet  RS;  //select°á°úµ¥ÀÌÅ¸ ±â¾ï,
+import com.hanbit.dto.DBbean;
+
+public class DBSQL {  //ï¿½Ï¹ï¿½ï¿½Ú¹ï¿½ = POJO  ï¿½ï¿½ï¿½X
+	private  Connection CN; //DBï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ id,pass ï¿½ï¿½ï¿½ ,  ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½
+	private  Statement  ST; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½É¾ï¿½
+	private  PreparedStatement PST; //ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½É¾ï¿½
+	private  ResultSet  RS;  //selectï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¸ ï¿½ï¿½ï¿½,
 	private  String sql;
 	private  int Gsabun ;
 	private  String Gname ;
 	private  int  Gpay;
-	private  int total ; //·¹ÄÚµåÀüÃ¼°¹¼ö 
+	private  int total ; //ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ 
 	
 	public DBSQL( ){
 		CN=DB.getConnection(); 
-	} //»ý¼ºÀÚ
+	} //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	
 	public void dbInsert( DBbean bean  ){ 
 		try{                                           
 			sql="insert into insa  values( ?, ? , sysdate, ?)" ;
 			PST=CN.prepareStatement(sql);         //  
-				PST.setInt(1,  bean.getSabun());    // numÇÊµå´Â Á÷Á¢ÀÔ·ÂX,  
-				PST.setString(2,  bean.getName()); //data1=>¸â¹öÇÊµå sabun => bean.getSabun( )±â¾ï 
+				PST.setInt(1,  bean.getSabun());    // numï¿½Êµï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô·ï¿½X,  
+				PST.setString(2,  bean.getName()); //data1=>ï¿½ï¿½ï¿½ï¿½Êµï¿½ sabun => bean.getSabun( )ï¿½ï¿½ï¿½ 
 				PST.setInt(3,  bean.getPay()); 
 			PST.executeUpdate( );
-			System.out.println("<a href=twolist>[list¸ñ·Ï]</a>") ; //ÄÜ¼ÖÃ¢
-			System.out.println("ÀúÀå¼º°ø 11:02 \n") ;
+			System.out.println("<a href=twolist>[listï¿½ï¿½ï¿½]</a>") ; //ï¿½Ü¼ï¿½Ã¢
+			System.out.println("ï¿½ï¿½ï¿½å¼ºï¿½ï¿½ 11:02 \n") ;
 		}catch(Exception ex){ }
 	} //dbInsert(1) end
 	
@@ -50,7 +52,7 @@ public class DBSQL {  //ÀÏ¹ÝÀÚ¹Ù = POJO  »ó¼ÓX
 		return AL;
 	} //dbSelect(X) end 
 	
-	public  DBbean  dbDetail(String data){ //DetailAction.java¹®¼­¿¡¼­ È£Ãâ
+	public  DBbean  dbDetail(String data){ //DetailAction.javaï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È£ï¿½ï¿½
 		DBbean  bean = new  DBbean( ); 
 		try{
 			sql="select  *  from  insa where sabun=" +data; 
@@ -73,8 +75,8 @@ public class DBSQL {  //ÀÏ¹ÝÀÚ¹Ù = POJO  »ó¼ÓX
 			sql="delete from insa where sabun=" +data ;
 			ST=CN.createStatement();
 			ST.executeUpdate(sql) ;
-			System.out.println("dbDelete(1) »èÁ¦¼º°ø ") ;
-		}catch(Exception ex){ System.out.println("½ÇÆÐ : " + ex.toString() ); }
+			System.out.println("dbDelete(1) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ") ;
+		}catch(Exception ex){ System.out.println("ï¿½ï¿½ï¿½ï¿½ : " + ex.toString() ); }
 	} //dbDelete(1) end
 
 	public void  dbEdit(DBbean bean){

@@ -3,18 +3,17 @@ package dao;
 import java.io.Reader;
 import java.util.ArrayList;
 
+import com.hanbit.dto.DBbean;
 import com.ibatis.common.resources.Resources;
 import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 
-import common.DBbean;
-
 public class Dao {
-	  private  static  SqlMapClient  sqlMap  ;  //sqlMapÇÊµå·Î Query.xml¹®¼­ idÁ¢±Ù 
+	  private  static  SqlMapClient  sqlMap  ;  //sqlMapï¿½Êµï¿½ï¿½ Query.xmlï¿½ï¿½ï¿½ï¿½ idï¿½ï¿½ï¿½ï¿½ 
 	  
     static {
     	try{
-	      String  path="./SqlMapConfig.xml";  //Query.xmlÁ÷Á¢Á¢±Ù X
+	      String  path="./SqlMapConfig.xml";  //Query.xmlï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ X
 	      Reader reader=Resources.getResourceAsReader(path);  
 	      sqlMap=SqlMapClientBuilder.buildSqlMapClient(reader);
     	}catch(Exception ex){  }
@@ -23,12 +22,12 @@ public class Dao {
  	public static void dbInsert(DBbean bean){
  		try{
  			System.out.println("\ndbInsert(DBbean)") ; 
- 			sqlMap.insert("add", bean);  //Query.xml¹®¼­  <insert id="add">
+ 			sqlMap.insert("add", bean);  //Query.xmlï¿½ï¿½ï¿½ï¿½  <insert id="add">
  		}catch(Exception ex) {  }
  	} //end
 	
  	
- 	public static ArrayList<DBbean>  dbSelect( ){ //ListAction.java => execute( )¸Þ¼Òµå¿¡¼­È£Ãâ
+ 	public static ArrayList<DBbean>  dbSelect( ){ //ListAction.java => execute( )ï¿½Þ¼Òµå¿¡ï¿½ï¿½È£ï¿½ï¿½
  		System.out.println("\ndbSelect() 9:40 ") ; 
  		ArrayList<DBbean>  alist = null;
  		try{

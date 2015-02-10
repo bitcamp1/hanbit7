@@ -1,11 +1,12 @@
 package net.hb.day29;
 
+import com.hanbit.dto.DBbean;
 import com.opensymphony.xwork2.ActionSupport;
-import common.DBbean;
+
 import dao.Dao;
 
 public class EditAction  extends  ActionSupport {
-	private  DBbean bean; //twoEdit.jsp¹®¼­  <input type=text  name="bean.sabun">
+	private  DBbean bean; //twoEdit.jspï¿½ï¿½ï¿½ï¿½  <input type=text  name="bean.sabun">
 	public   DBbean getBean() { 		return bean;	}
 	public   void setBean(DBbean bean) {		this.bean = bean;	}
 
@@ -14,7 +15,7 @@ public class EditAction  extends  ActionSupport {
 			System.out.println("\nEditAction.java ");
 			//Dao.dbInsert(bean);
 			Dao.dbEdit(bean) ; // UML=> NationalRose, StarUML 
-		}catch(Exception ex) {  System.out.println( "EditAction.java ½ÇÆÐ:" + ex.toString()) ; }
+		}catch(Exception ex) {  System.out.println( "EditAction.java ï¿½ï¿½ï¿½ï¿½:" + ex.toString()) ; }
 		return  SUCCESS;
 	} //end
 } //class END

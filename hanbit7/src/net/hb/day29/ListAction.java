@@ -5,28 +5,29 @@ import common.DBbean;
 import dao.Dao;
 
 public class InsertAction  extends  ActionSupport {
-	private  DBbean bean; //two.jsp¹®¼­  <input type=text  name="bean.sabun">
+	private  DBbean bean; //two.jspï¿½ï¿½ï¿½ï¿½  <input type=text  name="bean.sabun">
 	public   DBbean getBean() { 		return bean;	}
 	public   void setBean(DBbean bean) {		this.bean = bean;	}
 
 	public String execute() throws Exception {
 		try{
 			Dao.dbInsert(bean);
-			System.out.println("\nexecute( )¸Þ¼Òµå³¡ ÀúÀå¼º°ø!!!!");
-		}catch(Exception ex) {  System.out.println( "InsertAction.java ½ÇÆÐ:" + ex.toString()) ; }
+			System.out.println("\nexecute( )ï¿½Þ¼Òµå³¡ ï¿½ï¿½ï¿½å¼ºï¿½ï¿½!!!!");
+		}catch(Exception ex) {  System.out.println( "InsertAction.java ï¿½ï¿½ï¿½ï¿½:" + ex.toString()) ; }
 		return  SUCCESS;
 	} //end
 } //class END
 */
 
-//Ã¹¹øÂ° ÀúÀåÃ³¸® - ÀúÀåÀº ¾ÈµÊ
+//Ã¹ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Èµï¿½
 
 package net.hb.day29;
 
 import java.util.ArrayList;
 
+import com.hanbit.dto.DBbean;
 import com.opensymphony.xwork2.ActionSupport;
-import common.DBbean;
+
 import dao.Dao;
 
 public class  ListAction  extends  ActionSupport {
@@ -36,7 +37,7 @@ public class  ListAction  extends  ActionSupport {
 	
 	public String execute( ) throws Exception {
 		System.out.println("\nListAction.java 3:08") ;
-	    list=Dao.dbSelect( ); //listÇÊµå°¡ twoList.jsp¹®¼­ <c:forEach items="${list}" >
+	    list=Dao.dbSelect( ); //listï¿½Êµå°¡ twoList.jspï¿½ï¿½ï¿½ï¿½ <c:forEach items="${list}" >
 		return  SUCCESS;
 	} //end
 

@@ -1,7 +1,8 @@
 package net.hb.day29;
 
+import com.hanbit.dto.DBbean;
 import com.opensymphony.xwork2.ActionSupport;
-import common.DBbean;
+
 import dao.Dao;
 
 public class DetailAction  extends  ActionSupport {

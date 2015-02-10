@@ -1,7 +1,8 @@
 package net.hb.day29;
 
+import com.hanbit.dto.DBbean;
 import com.opensymphony.xwork2.ActionSupport;
-import common.DBbean;
+
 import dao.Dao;
 
 public class  EditPreAction  extends  ActionSupport {
@@ -15,7 +16,7 @@ public class  EditPreAction  extends  ActionSupport {
 
 	public String execute() throws Exception {
 		try{
-			System.out.println("\nEditPreAction.java 4-30-¼ö¿äÀÏ");
+			System.out.println("\nEditPreAction.java 4-30-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 			bean=Dao.dbDetail(idx);
 		}catch(Exception ex) {   }
 		return  SUCCESS;
