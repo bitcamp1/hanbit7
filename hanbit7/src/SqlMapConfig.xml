@@ -3,14 +3,12 @@
 
 <sqlMapConfig>
 	<transactionManager type="JDBC">
-			<dataSource type="SIMPLE">
-				<property name="JDBC.Driver" value="oracle.jdbc.OracleDriver"/>
-				<property name="JDBC.ConnectionURL" value="jdbc:oracle:thin:@127.0.0.1:1521:XE"/>
-				<property name="JDBC.Username" value="system"/>
-				<property name="JDBC.Password" value="oracle"/>
-			</dataSource>
+		<dataSource type="SIMPLE">
+			<property name="JDBC.Driver" value="oracle.jdbc.OracleDriver"/>
+			<property name="JDBC.ConnectionURL" value="jdbc:oracle:thin:@127.0.0.1:1521:XE"/>
+			<property name="JDBC.Username" value="system"/>
+			<property name="JDBC.Password" value="oracle"/>
+		</dataSource>
 	</transactionManager>
-	
 	<sqlMap  resource="Query.xml" />
-	
 </sqlMapConfig>
