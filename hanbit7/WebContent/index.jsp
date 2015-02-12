@@ -21,7 +21,7 @@
 	</head>
 	<body>
 		<h1>Hello World Form Struts2</h1>
-		<form action="hello.action">
+		<form action="intro.action">
 			<label for="name">Prease Enter Your Name !</label><br />
 			<input type="text" name="name" />
 			<input type="submit" value="Say ! Hello" />

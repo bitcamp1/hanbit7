@@ -1,23 +1,20 @@
-package net.hb.day29;
+package com.hanbit.guest;
 
-import com.hanbit.dto.DBbean;
 import com.opensymphony.xwork2.ActionSupport;
-
-import dao.Dao;
 
 public class DetailAction  extends  ActionSupport {
 	private  int idx ;
-	private  DBbean bean;
+	private  GuestDto bean;
 	
 	public int getIdx() {return idx;	}
 	public void setIdx(int idx) {	this.idx = idx;	}
-	public   DBbean getBean() {return bean;	}
-	public   void setBean(DBbean bean) {	this.bean = bean;	}
+	public   GuestDto getBean() {return bean;	}
+	public   void setBean(GuestDto bean) {	this.bean = bean;	}
 
 	public String execute() throws Exception {
 		try{
 			System.out.println("\nDetailAction.java");
-			bean=Dao.dbDetail(idx);
+			bean=GuestDao.dbDetail(idx);
 		}catch(Exception ex) {   }
 		return  SUCCESS;
 	} //end

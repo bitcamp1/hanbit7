@@ -10,5 +10,13 @@
 			<property name="JDBC.Password" value="oracle"/>
 		</dataSource>
 	</transactionManager>
-	<sqlMap  resource="Query.xml" />
+	<sqlMap  resource="Guest.xml" />
+	<sqlMap  resource="Member.xml" />
+	<sqlMap  resource="QnA.xml" />
+	<sqlMap  resource="Free.xml" />
+	<sqlMap  resource="Pic.xml" />
+	<sqlMap  resource="Board.xml" />
+	<sqlMap  resource="Admin.xml" />
+	<sqlMap  resource="Item.xml" />
+	<sqlMap  resource="Category.xml" />
 </sqlMapConfig>

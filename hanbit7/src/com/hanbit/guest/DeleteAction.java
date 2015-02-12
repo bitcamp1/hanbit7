@@ -1,9 +1,6 @@
-package net.hb.day29;
+package com.hanbit.guest;
 
-import com.hanbit.dto.DBbean;
 import com.opensymphony.xwork2.ActionSupport;
-
-import dao.Dao;
 
 public class DeleteAction  extends  ActionSupport {
 	private  int sabun ;	
@@ -13,7 +10,7 @@ public class DeleteAction  extends  ActionSupport {
 	public String execute() throws Exception {
 		try{
 			System.out.println("\nDeleteAction.java");
-			Dao.dbDelete(sabun) ; 
+			GuestDao.dbDelete(sabun) ; 
 		}catch(Exception ex) {   }
 		return  SUCCESS;
 	} //end

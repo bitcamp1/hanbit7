@@ -1,8 +1,8 @@
-package com.hanbit.dto;
+package com.hanbit.guest;
 
 import java.util.Date;
 
-public class GuestVo {
+public class GuestDto {
 	private int sabun;
 	private String name;
 	private String title;

@@ -5,11 +5,11 @@
     
  <struts>
  <constant name="struts.devMode" value="true"/>
-	<package name="helloworld" extends="struts-default">
-		<action name="hello"
-				class="com.hanbit.controller.IndexController"
+	<package name="default" extends="struts-default">
+		<action name="intro"
+				class="com.hanbit.common.IntroAction"
 				method="execute">
-			<result name="success">/views/guest/guest.jsp</result>
+			<result name="success">/views/common/main.jsp</result>
 		</action>
 		
 	</package>

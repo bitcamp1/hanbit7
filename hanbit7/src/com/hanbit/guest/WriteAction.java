@@ -1,8 +1,8 @@
-package com.hanbit.controller;
+package com.hanbit.guest;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class InsertController extends ActionSupport{
+public class WriteAction extends ActionSupport{
 	private static final long serialVersionUID = 1L;
 
 	@Override
