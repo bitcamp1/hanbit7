@@ -9,7 +9,7 @@
 		<action name="hello"
 				class="com.hanbit.controller.IndexController"
 				method="execute">
-			<result name="success">/guest/guest.jsp</result>
+			<result name="success">/views/guest/guest.jsp</result>
 		</action>
 		
 	</package>
