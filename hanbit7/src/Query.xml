@@ -5,13 +5,15 @@
 	<typeAlias alias="gyest" type="com.hanbit.dto.GuestDto"/>
 	
 	<insert  id="add" parameterClass="com.hanbit.dto.GuestDto">
-		insert into insa values(#sabun#, #name#, sysdate, #pay#)
+		insert into guest values(#sabun#, #name#, sysdate, #pay#)
 	</insert>
 
 	<select id="selectAll"  resultClass="insa">
 		select  * from guest order by sabun 
 	</select>		
-	
+	<select id="detail" resultClass="guest">
+		select * from gueset where sabun = #value#
+	</select>
 	
 	
 </sqlMap>

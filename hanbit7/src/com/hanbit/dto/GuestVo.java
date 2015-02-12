@@ -2,7 +2,7 @@ package com.hanbit.dto;
 
 import java.util.Date;
 
-public class GuestDto {
+public class GuestVo {
 	private int sabun;
 	private String name;
 	private String title;
