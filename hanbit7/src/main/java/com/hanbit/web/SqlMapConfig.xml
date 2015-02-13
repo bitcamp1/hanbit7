@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//ibatis.apache.org//DTD SQL Config 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+	<transactionManager type="JDBC">
+		<dataSource type="SIMPLE">
+			<property name="JDBC.Driver" value="oracle.jdbc.OracleDriver"/>
+			<property name="JDBC.ConnectionURL" value="jdbc:oracle:thin:@127.0.0.1:1521:XE"/>
+			<property name="JDBC.Username" value="system"/>
+			<property name="JDBC.Password" value="oracle"/>
+		</dataSource>
+	</transactionManager>
+	<sqlMap  resource="Guest.xml" />
+	<sqlMap  resource="Member.xml" />
+	<sqlMap  resource="QnA.xml" />
+	<sqlMap  resource="Free.xml" />
+	<sqlMap  resource="Pic.xml" />
+	<sqlMap  resource="Board.xml" />
+	<sqlMap  resource="Admin.xml" />
+	<sqlMap  resource="Item.xml" />
+	<sqlMap  resource="Category.xml" />
+</sqlMapConfig>
