@@ -1,8 +1,10 @@
-package com.hanbit.guest;
+package com.hanbit.controller;
 
+import com.hanbit.dao.GuestDao;
+import com.hanbit.dto.GuestDto;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class DetailAction  extends  ActionSupport {
+public class  EditPreAction  extends  ActionSupport {
 	private  int idx ;
 	private  GuestDto bean;
 	
@@ -13,7 +15,7 @@ public class DetailAction  extends  ActionSupport {
 
 	public String execute() throws Exception {
 		try{
-			System.out.println("\nDetailAction.java");
+			System.out.println("\nEditPreAction.java 4-30-������");
 			bean=GuestDao.dbDetail(idx);
 		}catch(Exception ex) {   }
 		return  SUCCESS;

@@ -1,5 +1,6 @@
-package com.hanbit.guest;
+package com.hanbit.controller;
 
+import com.hanbit.dao.GuestDao;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class DeleteAction  extends  ActionSupport {

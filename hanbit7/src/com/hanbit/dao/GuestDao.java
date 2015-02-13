@@ -1,8 +1,9 @@
-package com.hanbit.guest;
+package com.hanbit.dao;
 
 import java.io.Reader;
 import java.util.ArrayList;
 
+import com.hanbit.dto.GuestDto;
 import com.ibatis.common.resources.Resources;
 import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;

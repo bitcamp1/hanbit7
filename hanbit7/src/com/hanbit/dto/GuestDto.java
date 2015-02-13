@@ -1,4 +1,4 @@
-package com.hanbit.guest;
+package com.hanbit.dto;
 
 import java.util.Date;
 

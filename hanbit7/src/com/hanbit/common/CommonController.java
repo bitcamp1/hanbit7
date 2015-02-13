@@ -1,9 +1,9 @@
 package com.hanbit.common;
 
-import com.hanbit.guest.GuestDto;
+import com.hanbit.dto.GuestDto;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class IntroAction extends ActionSupport{
+public class CommonController extends ActionSupport{
 	/**
 	 * 
 	 */

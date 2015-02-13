@@ -1,7 +1,9 @@
-package com.hanbit.guest;
+package com.hanbit.controller;
 
 import java.util.ArrayList;
 
+import com.hanbit.dao.GuestDao;
+import com.hanbit.dto.GuestDto;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class  ListAction  extends  ActionSupport {

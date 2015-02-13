@@ -1,4 +1,4 @@
-package com.hanbit.guest;
+package com.hanbit.controller;
 
 import com.opensymphony.xwork2.ActionSupport;
 
