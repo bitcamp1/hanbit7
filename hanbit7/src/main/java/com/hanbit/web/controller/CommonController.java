@@ -15,6 +15,6 @@ public class CommonController {
 	@RequestMapping(value="{hello.do, test.do}",method=RequestMethod.GET)
 	public String home(Model model){
 		model.addAttribute("hello", "Hello !!");
-		return "/common/main";
+		return "common/main";
 	}
 }
