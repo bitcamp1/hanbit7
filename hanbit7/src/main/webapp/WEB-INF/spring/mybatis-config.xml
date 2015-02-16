@@ -3,18 +3,16 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-  <environments default="development">
-    <environment id="development">
-      <transactionManager type="JDBC"/>
-      <dataSource type="POOLED">
-        <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
-        <property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:XE"/>
-        <property name="username" value="system"/>
-        <property name="password" value="oracle"/>
-      </dataSource>
-    </environment>
-  </environments>
-  <mappers>
-    <mapper resource="com/hanbit/web/mappers/GuestMapper.xml"/>
-  </mappers>
+   <settings>
+        <setting name="cacheEnabled" value="false" />
+        <setting name="useGeneratedKeys" value="true" />
+        <setting name="defaultExecutorType" value="REUSE" />
+    </settings>
+      <typeAliases>
+        <typeAlias alias="Guest" type="com.hanbit.web.vo.GuestVo"></typeAlias>
+    </typeAliases>
+    
+    <mappers>
+        <mapper resource="com/hanbit/web/mappers/GuestMapper.xml"></mapper>
+    </mappers>
 </configuration>

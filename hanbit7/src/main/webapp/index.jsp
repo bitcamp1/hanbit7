@@ -7,6 +7,6 @@
 	<title>Document</title>
 </head>
 <body>
-	<jsp:forward page="test.do"/>
+	<jsp:forward page="common/main.do"/>
 </body>
 </html>

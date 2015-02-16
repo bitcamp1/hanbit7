@@ -20,6 +20,8 @@ MODIFY (sabun number(8));
 
 UPDATE guest SET name = 'last';
 
+
+
 insert into guest values(6032,'abdul','lie',sysdate,32);
 insert into guest values(6033,'adolf','hit',sysdate,33);
 insert into guest values(6034,'mao','march',sysdate,34);

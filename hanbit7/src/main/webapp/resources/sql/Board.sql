@@ -1,12 +1,18 @@
 
 -- 게시판
+-- 이벤트, Q&A, 공지사항, 리뷰
+
+-- qna, board, free, guest, pic, reply 가 brd_seq 공유
+
+CREATE TABLE Boardgrp(
+	boardgrp_no number(12) PRIMARY KEY,  
+	boardgrp_name varchar2(50) );
 
 CREATE TABLE Board(
 	brd_no number(12) PRIMARY KEY,
-	title varchar2(80),
+	subj varchar2(100),
 	ctnt varchar2(200),
-	read_cnt number(3),
-	reg_no number(3),
+	read_hit number(12),
 	reg_lvl number(3),
 	reg_step number(3),
 	req_ip varchar2(20),
@@ -25,8 +31,5 @@ CREATE TABLE Board(
 	     ON DELETE SET NULL
 );
 CREATE SEQUENCE brd_seq START WITH 1000 INCREMENT BY 1;
-CREATE TABLE MEMBER(
-	ID NUMBER
-);
-CREATE SEQUENCE MEMZ_SEQ START WITH 1000 INCREMENT BY 1;
+
 
