@@ -26,8 +26,7 @@ public class GuestServiceImpl implements GuestService{
 
 	@Override
 	public GuestVo getGuestByID(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.getGuestByID(id);
 	}
 
 	@Override
@@ -38,13 +37,11 @@ public class GuestServiceImpl implements GuestService{
 
 	@Override
 	public void updateGuest(GuestVo guest) {
-		// TODO Auto-generated method stub
-		
+		dao.updateGuest(guest);
 	}
-
 	@Override
 	public void removeGuest(int guestNo) {
-		// TODO Auto-generated method stub
+		dao.removeGuest(guestNo);
 		
 	}
 

@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
      "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+     
+     
 <mapper namespace="com.hanbit.web.dao.GuestDao">
-    <select id="getAllGuests" parameterType="int" resultType="com.hanbit.web.vo.GuestVo">
+    <resultMap type="com.hanbit.web.vo.GuestVo" id="Guest">
+    	<id property="guestNo" column="guest_no" javaType="int"/>
+    	<id property="name" column="name" javaType="java.lang.String"/>
+    	<id property="title" column="title" javaType="java.lang.String"/>
+    	<id property="nalja" column="nalja" javaType="java.util.Date"/>
+    	<id property="readHit" column="read_hit" javaType="int"/>
+    	
+    </resultMap>
+    
+    <select id="getAllGuests" parameterType="int" resultMap="Guest">
         select guest_no, name, title, nalja, read_hit 
         from (select rownum as seq, g.* from guest g)
         where seq between #{0} and #{1}
         order by guest_no desc
     </select>
-    <select id="getGuestByID" parameterType="int" resultType="com.hanbit.web.vo.GuestVo">
-        SELECT * FROM guest where guest_no = #{id}
+    <select id="getGuestByID" parameterType="int" resultMap="Guest">
+        select guest_no, name, title, nalja, read_hit 
+        from guest where guest_no = #{0}
     </select>
     <select id="getTotCount" resultType="int">
     	select count(*) from guest
@@ -18,12 +30,12 @@
         insert into guest (guest_no, name, title, nalja, read_hit) 
         values ( bre_seq.nextval, #{name}, #{title}, sysdate, #{readHIt}
     </insert>
-    <update id="upldateGuest" parameterType="com.hanbit.web.vo.GuestVo">
-    	update guest set title = #{title}
+    <update id="updateGuest" >
+    	update guest set title = #{title}, name = #{name}, nalja = sysdate
     	where guest_no = #{guestNo}
     </update>
-    <delete id="removeGuest" parameterType="com.hanbit.web.vo.GuestVo">
-        delete guest where guest_no = #{guestNo);
+    <delete id="removeGuest" parameterType="int">
+        delete guest where guest_no = #{0);
     </delete>
 </mapper>
 

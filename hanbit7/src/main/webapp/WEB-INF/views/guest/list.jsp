@@ -40,7 +40,7 @@
 			<td style='width:10%;'>${(totCount-(pageNo-1)*pageSize)-status.index}</td>
 			<td style='width:10%;'>${guest.guestNo}</td>
 			<td style='width:20%;'>${guest.name}</td>
-			<td style='width:30%;'><a href="${home}/guest/list.do?keyword=${guest.guestNo}">${guest.title}</a></td>
+			<td style='width:30%;'><a href="${home}/guest/detail.do?index=${guest.guestNo}">${guest.title}</a></td>
 			<td style='width:20%;'>${guest.nalja}</td>
 			<td style='width:10%;'>${guest.readHit}</td>
 		</tr>
