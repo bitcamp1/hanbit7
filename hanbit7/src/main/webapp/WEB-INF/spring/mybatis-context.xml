@@ -3,33 +3,20 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
- 
-<context:component-scan base-package="com.hanbit.web.service" />
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
 
-<beans:bean id="dataSource" class="org.apache.tomcat.dbcp.dbcp.BasicDataSource"> 
-<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
-<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/> 
-<beans:property name="username" value="system"/> 
-<beans:property name="password" value="oracle"/> 
-</beans:bean>
-<beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-   <beans:property name="dataSource" ref="dataSource" />
-   <beans:property name="mapperLocations" value="classpath*:/persistence/*Mapper.xml" />
-   <beans:property name="typeAliasesPackage" value="com.hanbit.web.vo"/>
- <!--   <beans:property name="configLocation" value="/WEB-INF/spring/mybatis-config.xml"/> -->
-</beans:bean>
-<beans:bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-  <beans:property name="basePackage" value="com.hanbit.web.mappers" />
-</beans:bean>
-<!-- 트랜잭션 매니저 -->
-<beans:bean id="transactionManager"
-class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-<beans:property name="dataSource" ref="dataSource"/>
-</beans:bean>
- 
-<!-- Annotation 기반 트랜잭션 설정 
-<tx:annotation-driven transaction-manager="transactionManager" />-->
+	
+	<beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	   <beans:property name="dataSource" ref="dataSource" />
+	   <beans:property name="mapperLocations" value="classpath*:/persistence/*Mapper.xml" />
+	   <beans:property name="typeAliasesPackage" value="com.hanbit.web.vo"/>
+	</beans:bean>
+	<beans:bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+	  <beans:property name="basePackage" value="com.hanbit.web.persistence" />
+	</beans:bean>
+	
 </beans:beans>

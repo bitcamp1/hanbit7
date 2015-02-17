@@ -1,4 +1,4 @@
-package com.hanbit.web.dao;
+package com.hanbit.web.persistence;
 
 import java.util.List;
 
@@ -7,13 +7,13 @@ import org.springframework.stereotype.Repository;
 import com.hanbit.web.vo.GuestVo;
 
 
-@Repository(value="guestMapper")
-public interface GuestDao {
-	public List<GuestVo> getGuestList();
-	public GuestVo getGuest(int id);
+
+public interface GuestMapper {
+	public List<GuestVo> getAllGuests();
+	public GuestVo getGuestByID(int id);
 	public void addGuest(GuestVo guest);
 	public void updateGuest(GuestVo guest);
-	public void deleteGuest(int guestNo);
+	public void removeGuest(int guestNo);
 } //class END
 
 

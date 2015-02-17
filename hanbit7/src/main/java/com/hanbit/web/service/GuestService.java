@@ -1,9 +1,17 @@
 package com.hanbit.web.service;
 
+import java.util.List;
+
+import com.hanbit.web.vo.GuestVo;
 
 
-public class GuestService {
 
+public interface GuestService {
+	public List<GuestVo> getAllGuests();
+	public GuestVo getGuestByID(int id);
+	public void addGuest(GuestVo guest);
+	public void updateGuest(GuestVo guest);
+	public void removeGuest(int guestNo);
 	
 
 }

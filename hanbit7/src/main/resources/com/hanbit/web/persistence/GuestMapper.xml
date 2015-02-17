@@ -1,51 +1,27 @@
-<!-- <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper
-     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
      "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.hanbit.web.mappers.GuestMapper">
-	
- 
-    id의 경우에는 Mapper.java에 동일하게 사용해야된다.
-    <select id="getGuestList" resultType="com.hanbit.web.vo.GuestVo">
+<mapper namespace="com.hanbit.web.persistence.GuestMapper">
+    <select id="getAllGuests" resultType="com.hanbit.web.vo.GuestVo">
         SELECT * FROM guest
     </select>
     
-    parameterType 에는 구문에 전달될 파라미터의 패키지 경로를 포함한 전체 클래명이나 별칭이 들어간다 
+    <select id="getGuestByID" parameterType="int" resultType="com.hanbit.web.vo.GuestVo">
+        SELECT * FROM guest where guest_no = #{id}
+    </select>
     <insert id="addGuest" parameterType="com.hanbit.web.vo.GuestVo" >
         insert into guest (guest_no, name, title, nalja, read_hit) 
         values ( bre_seq.nextval, #{name}, #{title}, sysdate, #{readHIt}
     </insert>
     
-    update와 delete는 생략한다.
+   
     <update id="upldateGuest" parameterType="com.hanbit.web.vo.GuestVo">
     	update guest set title = #{title}
     	where guest_no = #{guestNo}
     </update>
     
-    <delete id="deleteGuest" parameterType="com.hanbit.web.vo.GuestVo">
+    <delete id="removeGuest" parameterType="com.hanbit.web.vo.GuestVo">
         delete guest where guest_no = #{guestNo);
     </delete>
- 
 </mapper>
 
-	
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- -->

@@ -3,13 +3,13 @@ package com.hanbit.web.vo;
 import java.util.Date;
 
 public class GuestVo {
-	private int sabun;
+	private int guestNo;
 	private String name;
 	private String title;
-	private int pay;
+	private int readHit;
 	private Date nalja;
-	public int getSabun() {
-		return sabun;
+	public int getGuestNo() {
+		return guestNo;
 	}
 	public String getName() {
 		return name;
@@ -17,14 +17,14 @@ public class GuestVo {
 	public String getTitle() {
 		return title;
 	}
-	public int getPay() {
-		return pay;
+	public int getReadHit() {
+		return readHit;
 	}
 	public Date getNalja() {
 		return nalja;
 	}
-	public void setSabun(int sabun) {
-		this.sabun = sabun;
+	public void setGuestNo(int guestNo) {
+		this.guestNo = guestNo;
 	}
 	public void setName(String name) {
 		this.name = name;
@@ -32,12 +32,13 @@ public class GuestVo {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public void setPay(int pay) {
-		this.pay = pay;
+	public void setReadHit(int readHit) {
+		this.readHit = readHit;
 	}
 	public void setNalja(Date nalja) {
 		this.nalja = nalja;
 	}
+	
 	
 	
 }

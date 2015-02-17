@@ -13,7 +13,8 @@
 		</div>
 	
 		<div class='container'>
-			<div id="content">
+			<jsp:include page="list.jsp"/>	
+			<%-- <div id="content">
 				<div id="url-navi">yeSooL Community</div>
 						<c:choose>
 				<c:when test="${result eq 'detail'}">
@@ -23,7 +24,7 @@
 					<jsp:include page="list.jsp"/>	
 				</c:otherwise>
 				</c:choose>
-			</div>
+			</div> --%>
 		</div>
 		</div>
 		
