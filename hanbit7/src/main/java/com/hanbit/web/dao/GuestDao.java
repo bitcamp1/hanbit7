@@ -1,4 +1,4 @@
-package com.hanbit.web.persistence;
+package com.hanbit.web.dao;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import com.hanbit.web.vo.GuestVo;
 
 
 
-public interface GuestMapper {
+public interface GuestDao {
 	public List<GuestVo> getAllGuests();
 	public GuestVo getGuestByID(int id);
 	public void addGuest(GuestVo guest);
