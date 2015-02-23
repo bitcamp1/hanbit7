@@ -8,7 +8,6 @@ CREATE TABLE Qna(
 	mem_no number(12)
 	constraint qna_mem_fk
 	references Member(mem_no)
-	on delete cascade;
-);
+	on delete cascade);
 
-create sequence qna_seq start with 1000 increment by 1;
+

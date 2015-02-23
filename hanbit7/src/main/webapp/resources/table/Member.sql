@@ -13,17 +13,6 @@ CREATE TABLE Member(
 	addr_detail varchar2(80),
 	reg_date date DEFAULT SYSDATE);
 
-	create sequence mem_seq start with 1000 increment by 1;
-	
-	
--- 우편번호
 
-CREATE TABLE Zipcode(
 	
-	zipcode  varchar2(7) NOT NULL,
-	sido       varchar2(6) NOT NULL,
-	gugun    varchar2(30) NOT NULL,
-	dong      varchar2(50) NOT NULL,
-	ri           varchar2(80),
-	bunji      varchar2(20)
-);
+	

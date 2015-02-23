@@ -4,12 +4,10 @@
 
 -- qna, board, free, guest, pic, reply 가 brd_seq 공유
 
-CREATE TABLE Boardgrp(
-	boardgrp_no number(12) PRIMARY KEY,  
-	boardgrp_name varchar2(50) );
+
 
 CREATE TABLE Board(
-	brd_no number(12) PRIMARY KEY,
+	brd_no number(12) PRIMARY KEY, -- 시퀀스 article_seq
 	subj varchar2(100),
 	ctnt varchar2(200),
 	read_hit number(12),
@@ -30,6 +28,6 @@ CREATE TABLE Board(
 	     REFERENCES Member(email)
 	     ON DELETE SET NULL
 );
-CREATE SEQUENCE brd_seq START WITH 1000 INCREMENT BY 1;
+
 
 

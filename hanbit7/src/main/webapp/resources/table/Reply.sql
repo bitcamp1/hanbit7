@@ -10,4 +10,3 @@ CREATE TABLE Reply(
 	on delete cascade
 );
 
-create  sequence  reply_seq;

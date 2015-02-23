@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/item")
 public class  ItemController   {
 	static final Logger logger = Logger.getLogger(ItemController.class);
+	
+	@RequestMapping("/main")
 	public String main(Model model){
 		return "item/main";
 	}

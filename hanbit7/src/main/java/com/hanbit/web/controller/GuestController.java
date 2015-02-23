@@ -19,7 +19,7 @@ public class  GuestController   {
 	@Autowired
 	GuestServiceImpl g;
 	static final Logger logger = Logger.getLogger(GuestController.class);
-	@RequestMapping("/list")
+	@RequestMapping("/main")
 	public String getGuestList(@RequestParam(value="pageNo", required=true, defaultValue="1")int pageNo, 
 			Model model){
 		int pageSize = 10;

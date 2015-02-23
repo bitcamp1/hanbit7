@@ -9,8 +9,8 @@
 				<div class="top-nav">
 					<ul>
 						<li><a href="${home}/item/main.do">제 품</a></li>
-						<li><a href="${home}/board/list.do?pageNo=1">게시판</a></li>
-						<li><a href="${home}/guest/list.do?pageNo=1">방명록</a></li>
+						<li><a href="${home}/board/main.do?pageNo=1">게시판</a></li>
+						<li><a href="${home}/guest/main.do?pageNo=1">방명록</a></li>
 						<li><a href="${home}/admin/main.do" > 관리자</a></li>
 						<li><a href="${home}/about/main.do">회사소개</a></li>
 						<li><a href="${home}/member/join.do">회원가입</a></li>

@@ -7,6 +7,6 @@ CREATE TABLE Category(
      
      
      
-CREATE SEQUENCE seq START WITH 1000 INCREMENT BY 1;
+
 
 

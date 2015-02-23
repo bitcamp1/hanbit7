@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class CommonController {
 	static final Logger logger = Logger.getLogger(CommonController.class);
 	
-	@RequestMapping(value="/main.do",method=RequestMethod.GET)
+	@RequestMapping(value="/main",method=RequestMethod.GET)
 	public String main(Model model){
 		model.addAttribute("hello", "Hello !!");
 		return "common/main";

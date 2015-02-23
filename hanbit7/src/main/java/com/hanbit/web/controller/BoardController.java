@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/board")
 public class BoardController {
 	static final Logger logger = Logger.getLogger(BoardController.class);
-	@RequestMapping("/main")
+	@RequestMapping("/main.do")
 	public String main(Model model){
 		
 		return "board/main";
