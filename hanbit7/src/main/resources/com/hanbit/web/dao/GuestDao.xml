@@ -4,22 +4,14 @@
      
      
 <mapper namespace="com.hanbit.web.dao.GuestDao">
-    <resultMap type="com.hanbit.web.vo.GuestVo" id="Guest">
-    	<id property="guestNo" column="guest_no" javaType="int"/>
-    	<id property="name" column="name" javaType="java.lang.String"/>
-    	<id property="title" column="title" javaType="java.lang.String"/>
-    	<id property="nalja" column="nalja" javaType="java.util.Date"/>
-    	<id property="readHit" column="read_hit" javaType="int"/>
-    	
-    </resultMap>
-    
-    <select id="getAllGuests" parameterType="int" resultMap="Guest">
+    <resultMap type="com.hanbit.web.vo.GuestVo" id="guest"/>
+    <select id="getAllGuests" parameterType="int" resultMap="guest">
         select guest_no, name, title, nalja, read_hit 
         from (select rownum as seq, g.* from guest g)
         where seq between #{0} and #{1}
         order by guest_no desc
     </select>
-    <select id="getGuestByID" parameterType="int" resultMap="Guest">
+    <select id="getGuestByID" parameterType="int" resultMap="guest">
         select guest_no, name, title, nalja, read_hit 
         from guest where guest_no = #{0}
     </select>

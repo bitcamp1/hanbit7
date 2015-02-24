@@ -1,24 +1,21 @@
 package com.hanbit.web.vo;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class ItemVo implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	private int itemNO;
+	private int itemNo;
 	private String itemName;
 	private int price;
 	private String pdDate;
-	private int salNO ;
-	private int capa;
-	private int alcol;
-	private String desc;
-	private int imgNO;
-	private String pdOrigin;
-	public int getItemNO() {
-		return itemNO;
+	private String dsc;
+	private String repImg;
+	private String bigImg;
+	private String cateName;
+	public int getItemNo() {
+		return itemNo;
 	}
 	public String getItemName() {
 		return itemName;
@@ -26,26 +23,23 @@ public class ItemVo implements Serializable{
 	public int getPrice() {
 		return price;
 	}
-	int getSalNO() {
-		return salNO;
+	public String getPdDate() {
+		return pdDate;
 	}
-	public int getCapa() {
-		return capa;
+	public String getDsc() {
+		return dsc;
 	}
-	public int getAlcol() {
-		return alcol;
+	public String getRepImg() {
+		return repImg;
 	}
-	public String getDesc() {
-		return desc;
+	public String getBigImg() {
+		return bigImg;
 	}
-	public int getImgNO() {
-		return imgNO;
+	public String getCateName() {
+		return cateName;
 	}
-	public String getPdOrigin() {
-		return pdOrigin;
-	}
-	public void setItemNO(int itemNO) {
-		this.itemNO = itemNO;
+	public void setItemNo(int itemNo) {
+		this.itemNo = itemNo;
 	}
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
@@ -53,30 +47,20 @@ public class ItemVo implements Serializable{
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	
-	public void setSalNO(int salNO) {
-		this.salNO = salNO;
-	}
-	public void setCapa(int capa) {
-		this.capa = capa;
-	}
-	public void setAlcol(int alcol) {
-		this.alcol = alcol;
-	}
-	public void setDesc(String desc) {
-		this.desc = desc;
-	}
-	public void setImgNO(int imgNO) {
-		this.imgNO = imgNO;
-	}
-	public void setPdOrigin(String pdOrigin) {
-		this.pdOrigin = pdOrigin;
-	}
-	public String getPdDate() {
-		return pdDate;
-	}
 	public void setPdDate(String pdDate) {
 		this.pdDate = pdDate;
+	}
+	public void setDsc(String dsc) {
+		this.dsc = dsc;
+	}
+	public void setRepImg(String repImg) {
+		this.repImg = repImg;
+	}
+	public void setBigImg(String bigImg) {
+		this.bigImg = bigImg;
+	}
+	public void setCateName(String cateName) {
+		this.cateName = cateName;
 	}
 	
 	

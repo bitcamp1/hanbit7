@@ -18,7 +18,7 @@ import com.hanbit.web.vo.GuestVo;
 public class  GuestController   {
 	@Autowired
 	GuestServiceImpl g;
-	static final Logger logger = Logger.getLogger(GuestController.class);
+	public static final Logger logger = Logger.getLogger(GuestController.class);
 	@RequestMapping("/main")
 	public String getGuestList(@RequestParam(value="pageNo", required=true, defaultValue="1")int pageNo, 
 			Model model){
