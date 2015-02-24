@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+	"HTTP://mybatis.org/dtd/mybatis-3-config.dtd">
+	<configuration>
+		<settings>
+			<setting name="cacheEnable" value="false"/>
+			<setting name="userGeneratedKeys" value="true"/>
+			<setting name="defaultExecutorType" value="REUSE"/>
+		</settings>
+		<typeAliases>
+			<typeAlias alias="hashMap" type="java.util.HashMap"/>
+			<typeAlias type="java.lang.String" alias="string"/>
+			<typeAlias type="java.util.Map" alias="map"/>
+			<typeAlias type="com.hanbit.web.vo.GuestVo" alias="guest"/>
+		</typeAliases>
+	<!-- 	<mappers>
+        <mapper resource="com/hanbit/web/dao/GuestDao.xml"/>
+    </mappers> -->
+		
+	</configuration>
