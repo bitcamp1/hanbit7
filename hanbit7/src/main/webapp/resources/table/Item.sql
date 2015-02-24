@@ -13,7 +13,8 @@ CREATE TABLE Item(
 	dsc varchar2(300) DEFAULT '없음',
 	cate_name number(12) NOT NULL,-- 카테고리 
 	rep_img varchar2(200)),
-	big_img varchar2(200);  
+	big_img varchar2(200),
+	reg_date date default sysdate;
 	
 select 
 item_no 

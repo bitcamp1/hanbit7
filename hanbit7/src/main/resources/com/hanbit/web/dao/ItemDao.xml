@@ -2,7 +2,53 @@
 <!DOCTYPE mapper   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
      "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hanbit.web.dao.ItemDao">
-	<select id="getlist" parameterType="int" resultType="com.hanbit.web.vo.ItemVo">
-		
+	<resultMap type="com.hanbit.web.vo.ItemVo" id="item"/>
+	<resultMap type="java.util.HashMap" id="map"/>
+	<select id="selectList" parameterType="int" resultMap="item">
+		select item_no, item_name, price, pd_date,
+		dsc, cate_name, rep_img, big_img, reg_date
+		from 
+		(select rownum as seq, i.* from item i)
+		where seq between #{start} and #{end}
+		<if test="value != null">
+			and 
+			<if test='key=="itemName"'> item_name</if>
+			<if test='key=="cateName"'> cate_name</if>
+				like '%'||#{val}||'%'
+		</if>
+		order by item_no desc 
 	</select>
+	<select id="selectOne" parameterType="int" resultMap="item">
+		select * 
+		from item
+		where item_no = #{0}
+	</select>
+	
+	<select id="count" resultType="int">
+		select count(*)
+		from item
+	</select>
+	<insert id="insert" parameterType="com.hanbit.web.vo.ItemVo">
+		insert into item
+		(item_no, item_name, price, pd_date, dsc, cate_name, rep_img, big_img, reg_date)
+		values
+		(item_seq.nextval, #{itemName}, #{price}, #{pd_date}, 
+		#{dsc}, #{cate_name}, #{rep_img}, #{big_img} , sysdate  )
+	</insert>
+	<update id="update">
+		update item 
+		set item_name = #{itemName},
+			price = #{price},
+			pd_date = #{pdDate},
+			dsc = #{dsc},
+			cate_name = #{cateName},
+			reg_img = #{repImg},
+			big_img = #{bigImg},
+			reg_date = sysdate
+		where item_no = #{item_no}
+	</update>
+	<delete id="delete" parameterType="int">
+		delete item
+		where item_no = #{0}
+	</delete>
 </mapper>

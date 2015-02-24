@@ -1,6 +1,7 @@
 package com.hanbit.web.vo;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class ItemVo implements Serializable{
 
@@ -14,6 +15,8 @@ public class ItemVo implements Serializable{
 	private String repImg;
 	private String bigImg;
 	private String cateName;
+	private Date regDate;
+	
 	public int getItemNo() {
 		return itemNo;
 	}
@@ -61,6 +64,12 @@ public class ItemVo implements Serializable{
 	}
 	public void setCateName(String cateName) {
 		this.cateName = cateName;
+	}
+	public Date getRegDate() {
+		return regDate;
+	}
+	public void setRegDate(Date regDate) {
+		this.regDate = regDate;
 	}
 	
 	
