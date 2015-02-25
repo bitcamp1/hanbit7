@@ -12,8 +12,8 @@
  	<beans:bean id="dataSource" class="org.apache.tomcat.dbcp.dbcp.BasicDataSource"> 
 		<beans:property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
 		<beans:property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/> 
-		<beans:property name="username" value="system"/> 
-		<beans:property name="password" value="oracle"/> 
+		<beans:property name="username" value="hanbit"/> 
+		<beans:property name="password" value="hanbit"/> 
 	</beans:bean>
 	<beans:bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<beans:property name="dataSource" ref="dataSource"/>

@@ -1,27 +1,3 @@
-DROP TABLE guest;
-
-CREATE TABLE guest(
-     sabun number(4) primary key,
-     name varchar2(30) not null,
-     title varchar2(30) not null,
-     nalja date not null,
-     pay number(3) not null
-);
-
-CREATE SEQUENCE guest_seq START WITH 1000 INCREMENT BY 1;
-ALTER TABLE Guest
-MODIFY (name varchar2(30));
-
-ALTER TABLE Guest(
-MODIFY (title varchar2(300));
-
-ALTER TABLE Guest(
-MODIFY (sabun number(8));
-
-UPDATE guest SET name = 'last';
-
-
-
 insert into guest values(6032,'abdul','lie',sysdate,32);
 insert into guest values(6033,'adolf','hit',sysdate,33);
 insert into guest values(6034,'mao','march',sysdate,34);
@@ -123,16 +99,5 @@ insert  into  guest   values(5177, 'blue7',  'bb7',   sysdate, 57) ;
 insert  into  guest   values(5188,  'black8',  'bb8',   sysdate, 58) ;
 insert  into  guest   values(5199, 'white9',  'bb9',  sysdate, 59) ;
 
-select * from guest where name like '%n%';
-
-select count(*) from guest;
-
-select count(*) as cnt from guest;
-
-select rownum, sabun, name, nalja from guest;
-
-select * from guest where pay between 30 and 70;
-
-update guest set name = 'last', title='coffee', nalja = sysdate, pay=123 where sabun = 4400;
 
 
