@@ -18,11 +18,11 @@ drop sequence arti_seq;
 drop sequence file_seq;
 
 -- Member ---< Vendor , Emp, Cust
-CREATE TABLE Memberinfo( -- 회원정보 
-	mem_id varchar2(50) primary key,
+create table Auth( -- 회원 권한 정보 
+	id varchar2(50) ,
 	name varchar2(30) not null,
 	passwd varchar2(50) not null,
-	reg_dt date ,
+	reg_dt date default sysdate,
 	gender varchar2(4) constraint mem_gen_ck check(gender='남자' or gender='여자'),
 	phone varchar2(15),
 	email varchar2(30) unique,
@@ -32,19 +32,26 @@ CREATE TABLE Memberinfo( -- 회원정보
 	city varchar2(15), -- 시, 구, 군
 	doro varchar2(30), -- 도로명
 	jibun varchar2(30), -- 지번
-	bld varchar2(30) -- 빌딩,APT 
+	bld varchar2(30), -- 빌딩,APT 
+	constraint ct_pk primary key(mem_id)
 );
-create table dept(
-	dep_cd number(12) primary key,
+create table Department(
+	dep_cd number(12) ,
 	dep_nm varchar2(20)
+	constraint dept_pk primary key(dep_cd);
 );
 create table Vendor(
-	mem_id varchar2(20),
+	id varchar2(20),
+	ven_cd varchar2(20),
 	itm_cd number(12),
-	constraint ven_pk primary key (mem_id, itm_cd)
+	constraint ven_pk primary key (id, ven_cd)
+	constraint ven_ct_fk foreign key(id) references Auth(id)
+		on delete cascade
+	constraint ven_prd_fk foreign key(itm_cd) references Supply(sup_no)
 );
 create table Employee(
-	mem_id varchar2(20) primary key,
+	id varchar2(20),
+	emp_cd varchar2(20),
 	dep_cd number(12),
 	rank varchar2(10)  -- 직급
 	
