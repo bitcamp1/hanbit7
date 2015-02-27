@@ -7,6 +7,7 @@
 	<title>Document</title>
 </head>
 <body>
-	<jsp:forward page="common/main.do"/>
+	<%-- <jsp:forward page="common/main.do"/> --%>
+	<script type="text/javascript"></script>
 </body>
 </html>
